@@ -7,6 +7,8 @@ import Layout from "components/Layout/Layout";
 import Home from "pages/Home/Home";
 import About from "pages/About/About";
 import Users from "pages/Users/Users";
+import Clients from "pages/Clients/Clients";
+import { Apple, Facebook, Sega } from "pages/Clients/components";
 
 // Lessons
 import Lesson20 from "lessons/Lesson20/Lesson20";
@@ -15,6 +17,7 @@ import Lesson22 from "lessons/Lessons22/Lesson22";
 import Lesson23 from "lessons/Lesson23/Lesson23";
 import Lesson24 from "lessons/Lesson24/Lesson24";
 import Lesson25 from "lessons/Lesson25/Lesson25";
+import Lesson27 from "lessons/Lesson27/Lesson27";
 
 // Homeworks
 import Homework20 from "homeworks/Homework20/Homework20";
@@ -28,20 +31,25 @@ function App() {
   return (
     <BrowserRouter>
       <GlobalStyles />
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/users" element={<Users />} />
           <Route path="/about" element={<About />} />
+          <Route path="/clients" element={<Clients />} />
+          <Route path="/clients/apple" element={<Apple />} />
+          <Route path="/clients/facebook" element={<Facebook />} />
+          <Route path="/clients/sega" element={<Sega />} />
           <Route path="*" element="Page Not Found" />
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* <Lesson20 /> */}
       {/* <Lesson21 /> */}
       {/* <Lesson22 /> */}
       {/* <Lesson23 /> */}
       {/* <Lesson24 /> */}
       {/* <Lesson25 /> */}
+      <Lesson27 />
       {/* <Homework20 /> */}
       {/* <Homework21 /> */}
       {/* <Homework22 /> */}
