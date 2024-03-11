@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import { LayoutProps } from "./types";
 import {
   LayoutWrapper,
@@ -8,13 +10,19 @@ import {
   Main,
   Footer,
   StyledNavLink,
+  StyledLink,
+  FooterNavContainer,
 } from "./styles";
 
 function Layout({ children }: LayoutProps) {
+  const navigate = useNavigate();
+
+  const goToHomePage = () => navigate("/");
+
   return (
     <LayoutWrapper>
       <Header>
-        <HeaderLogoContainer>
+        <HeaderLogoContainer onClick={goToHomePage}>
           <HeaderLogo />
         </HeaderLogoContainer>
         <NavContainer>
@@ -38,6 +46,14 @@ function Layout({ children }: LayoutProps) {
             style={({ isActive }) => ({
               textDecoration: isActive ? "underline" : "none",
             })}
+            to="/clients"
+          >
+            Clients
+          </StyledNavLink>
+          <StyledNavLink
+            style={({ isActive }) => ({
+              textDecoration: isActive ? "underline" : "none",
+            })}
             to="/about"
           >
             About
@@ -45,7 +61,17 @@ function Layout({ children }: LayoutProps) {
         </NavContainer>
       </Header>
       <Main>{children}</Main>
-      <Footer></Footer>
+      <Footer>
+        <HeaderLogoContainer onClick={goToHomePage}>
+          <HeaderLogo />
+        </HeaderLogoContainer>
+        <FooterNavContainer>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/users">Users</StyledLink>
+          <StyledLink to="/clients">Clients</StyledLink>
+          <StyledLink to="/about">About</StyledLink>
+        </FooterNavContainer>
+      </Footer>
     </LayoutWrapper>
   );
 }
