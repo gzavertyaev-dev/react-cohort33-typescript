@@ -1,5 +1,6 @@
 type ButtonTypes = "button" | "submit" | "reset" | undefined;
 
+
 export interface ButtonProps {
   name: string;
   disabled?: boolean;
